@@ -1,0 +1,26 @@
+name: Calidad desktop
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: calidad-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  calidad:
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: desktop/package-lock.json
+      - run: npm ci --prefix desktop
+      - run: npm run typecheck
+      - name: Pruebas unitarias (modelo y exportación con FFmpeg real)
+        run: npm test

@@ -1,0 +1,18 @@
+# Dependencias
+node_modules/
+
+# Salidas de build y pruebas
+desktop/out/
+desktop/dist/
+desktop/qa/artifacts/
+
+# Sistema y editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Secretos (WonderFilm no usa ninguno; por si acaso)
+.env
+.env.*
+*.pem

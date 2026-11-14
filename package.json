@@ -1,0 +1,15 @@
+{
+  "name": "wonderfilm",
+  "version": "0.3.0",
+  "private": true,
+  "description": "Editor de vídeo de escritorio para Windows, local y controlable por agentes de IA",
+  "license": "Apache-2.0",
+  "scripts": {
+    "dev": "npm --prefix desktop run dev",
+    "build": "npm --prefix desktop run build",
+    "typecheck": "npm --prefix desktop run typecheck",
+    "test": "npm --prefix desktop test",
+    "test:e2e": "npm --prefix desktop run test:e2e",
+    "dist": "npm --prefix desktop run dist"
+  }
+}
